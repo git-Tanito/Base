@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nuevo-cliente</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+
+    <main class="main">
+        <aside class="aside">
+            <footer class="footer">
+                <h1 class="heading">Doctor Melendez</h1>
+            </footer>
+            <nav class="navegacion">
+                <ul class="navegacion-lista">
+                    <li class="lista"><a href="index.html">Home</a></li>
+                    <li class="lista activo"><a href="nuevo-cliente.html">Nuevo cliente</a></li>
+                    <li class="lista"><a href="#">Clientes</a></li>
+                    <li class="lista"><a href="#">Citas</a></li>
+                    <li class="lista"><a href="#">Recetas</a></li>
+                    <li class="lista"><a href="#">Agenda</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <!-- Formulario paciente -->
+        <form id="form-paciente" class="form-paciente">
+            <fieldset>
+                <legend>Datos del paciente</legend>
+                <div class="campo">
+                    <label for="paciente">Nombre:</label>
+                    <input type="text" id="paciente" name="paciente">
+                </div>
+                <div class="campo">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono">
+                </div>
+                <div class="campo">
+                    <label for="edad">Edad:</label>
+                    <input type="number" id="edad" name="edad">
+                </div>
+                <div class="campo">
+                    <label for="alergias">Alergias:</label>
+                    <textarea id="alergias" name="alergias"></textarea>
+                </div>
+                <div class="campo">
+                    <label for="fecha_alta">Fecha de alta:</label>
+                    <input type="date" id="fecha_alta" name="fecha_alta">
+                </div>
+                <div class="campo radio-grupo">
+                    <span>¿Diabetes?</span>
+                    <input type="radio" id="diabetes_si" name="diabetes" value="si">
+                    <label class="no-pading" for="diabetes_si">Sí</label>
+                    <input type="radio" id="diabetes_no" name="diabetes" value="no">
+                    <label class="no-pading" for="diabetes_no">No</label>
+                </div>
+
+                <div class="campo radio-grupo">
+                    <span>¿Hipertensión?</span>
+                    <input type="radio" id="hipertension_si" name="hipertension" value="si">
+                    <label class="no-pading" for="hipertension_si">Sí</label>
+                    <input type="radio" id="hipertension_no" name="hipertension" value="no">
+                    <label class="no-pading" for="hipertension_no">No</label>
+                </div>
+
+                <button type="submit">Guardar paciente</button>
+            </fieldset>
+        </form>
+
+        <form id="form-visita" class="form-visita">
+            <fieldset>
+                <legend>Datos de la visita</legend>
+
+                <div class="campo">
+                    <label for="fecha_visita">Fecha de la visita:</label>
+                    <input type="date" id="fecha_visita" name="fecha_visita">
+                </div>
+
+                <div class="campo">
+                    <label for="temperatura">Temperatura (°C):</label>
+                    <input type="number" id="temperatura" name="temperatura" step="0.1">
+                </div>
+
+                <div class="campo">
+                    <label for="presion">Presión arterial:</label>
+                    <input type="text" id="presion" name="presion">
+                </div>
+
+                <div class="campo">
+                    <label for="peso">Peso (kg):</label>
+                    <input type="number" id="peso" name="peso" step="0.1">
+                </div>
+
+                <div class="campo">
+                    <label for="altura">Altura (cm):</label>
+                    <input type="number" id="altura" name="altura">
+                </div>
+
+                <div class="campo">
+                    <label for="sintomas">Síntomas:</label>
+                    <textarea id="sintomas" name="sintomas"></textarea>
+                </div>
+
+                <!-- Aquí va la receta -->
+                <!-- Botón que abre modal -->
+                <button type="button" id="abrirModalReceta">Crear receta</button>
+
+                <!-- Modal -->
+                <div id="modalReceta" class="modal">
+                    <div class="modal-contenido">
+                        <span class="cerrar">&times;</span>
+                        <h2>Receta médica</h2>
+                        <p><strong>Paciente:</strong> <span id="pacienteModal"></span></p>
+                        <p><strong>Fecha:</strong> <span id="fechaModal"></span></p>
+
+                        <label for="textoReceta">Receta:</label>
+                        <textarea id="textoReceta" rows="6"></textarea>
+
+                        <button id="imprimirReceta">Imprimir/Guardar PDF</button>
+                    </div>
+                </div>
+
+
+
+                <button type="submit">Guardar visita</button>
+            </fieldset>
+        </form>
+
+        <script src="nuevo-cliente.js"></script>
+</body>
+
+</html>
